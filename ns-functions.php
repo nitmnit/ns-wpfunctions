@@ -15,3 +15,10 @@ function ns_get_category_posts($id){
 }
  
 add_shortcode('ns_posts', 'ns_get_category_posts');
+
+function get_current_users_role(){
+  global $current_user;
+  $user_roles = $current_user->roles;
+  $user_role = array_shift($user_roles);
+  return $user_role;
+}
